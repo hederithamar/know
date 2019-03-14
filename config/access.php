@@ -90,4 +90,12 @@ return [
      * Makes it so social logins can not change passwords, etc.
      */
     'socialite_session_name' => 'socialite_provider',
+
+
+    /*
+     * Names table used by Access to save assigned states to the database.
+     */
+    'countries_table'       => 'countries',
+    'states_table'          => 'states',
+    'municipalities_table'  => 'municipalities',
 ];

@@ -34,6 +34,9 @@ class AuthTableSeeder extends Seeder
         $this->call(PermissionRoleTableSeeder::class);
         $this->call(UserRoleTableSeeder::class);
 
+        $this->call(CountryTableSeeder::class);
+        $this->call(StateTableSeeder::class);
+    
         $this->enableForeignKeys();
     }
 }
