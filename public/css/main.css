@@ -1,0 +1,64 @@
+.fa-lg {
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+
+h1{
+	font-family: arial;
+}
+
+#some-id{
+	border: 1px;
+}
+
+.some-class{
+	color: peru;
+	font-family: arial;
+}
+
+.some-class.text-underline {
+	color: peru;
+	font-family: arial;
+	text-decoration: underline;
+}
+
+#unsorted-list.unstyle-list li {
+	list-style: none;
+}
+
+ol li {
+	border: 1px solid #eaeaee
+	paddding: 10px;
+}
+
+ol li:nth-of-type(odd){
+	color:white;
+	background: #333;
+
+}
+
+ol li:nth-of-type(even){
+	color:white;
+	background: salmon;
+}
+
+li:hover {
+	cursor: pointer;
+}
+
+
+input:focus{
+	box-shadow: 5px 5px 5px #ccc
+}
+input{
+	font-family: arial;
+	font-size: 10px;
+	padding: 10px:;
+}
+
+
+
+
+
+

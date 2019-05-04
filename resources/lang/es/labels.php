@@ -149,5 +149,24 @@ return [
                 'update_information' => 'Actualizar la información',
             ],
         ],
+
+        'curriculum' => [
+            'box_title_data_personal' => 'Datos Personales',
+            'box_title_data_profecional' => 'Datos Profecionales',
+            'button' => 'Enviar información',
+
+            'profile' => [
+                'avatar'             => 'Avatar',
+                'created_at'         => 'Creado el',
+                'edit_information'   => 'Modificar la información',
+                'email'              => 'Correo',
+                'last_updated'       => 'Última modificación',
+                'name'               => 'Nombre',
+                'first_name'         => 'Nombre',
+                'last_name'          => 'Apellidos',
+                'update_information' => 'Actualizar la información',
+            ],
+        ],
+
     ],
 ];

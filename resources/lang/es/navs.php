@@ -19,6 +19,7 @@ return [
     ],
 
     'frontend' => [
+        'curriculum'   => 'Curriculum',
         'contact'   => 'Contacto',
         'dashboard' => 'Principal',
         'login'     => 'Iniciar Sessión',
