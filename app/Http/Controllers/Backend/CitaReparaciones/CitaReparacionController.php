@@ -42,6 +42,6 @@ class CitaReparacionController extends Controller
             ];
         endif;
 
-        return json_encode($data)
+        return json_encode($data);
     }
 }
