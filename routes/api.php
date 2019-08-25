@@ -53,5 +53,13 @@ Route::group([
         Route::post('createCita', 'CitaReparacionController@create');
 
     });
-});
 
+
+    Route::group([
+        'prefix'     => 'centroServicio',
+        'namespace'  => 'CentroServicio',
+    ], function () {
+        
+        Route::get('getCentros', 'CentroServiciosController@getCentros');
+    });
+});

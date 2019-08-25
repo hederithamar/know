@@ -28,7 +28,7 @@ class CitaReparacionController extends Controller
     public function create(Request $request)
     {
         $cita = $this->citaReparacionRepository
-            ->create($request->all());
+            ->create($request_>all());
 
         if($cita):
             $data = [
@@ -42,6 +42,6 @@ class CitaReparacionController extends Controller
             ];
         endif;
 
-        return json_encode($data);
+        return json_encode($data)
     }
 }

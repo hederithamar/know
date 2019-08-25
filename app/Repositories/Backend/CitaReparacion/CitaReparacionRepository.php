@@ -53,9 +53,10 @@ class CitaReparacionRepository extends BaseRepository
     {
         $cita = $this->model;
 
-        $citas = $cita->select('fecha','hora', 'U.first_name')
+        $citas = $cita->select('S.nombre AS sucursal', 'S.direccion', 'S.cp', 'S.estado','fecha','hora', 'U.first_name')
                     ->join('users AS U', 'U.id', '=', 'id_cliente')
-                    ->where('U.id',1)
+                    ->leftJoin('cat_centro_servicios AS S', 'S.id', '=', 'id_centro')
+                    ->where('U.id', $request->id)
                     ->get();
         
         return $citas;
