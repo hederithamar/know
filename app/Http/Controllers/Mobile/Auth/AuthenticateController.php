@@ -63,8 +63,8 @@ class AuthenticateController extends Controller
     public function authenticate(Request $request)
     {   
         // Obtiene las credenciales
-        $email = $request->input('input.email');
-        $password = $request->input('input.password');
+        $email = $request->input('email');
+        $password = $request->input('password');
         $iccid = $request->input('input.iccid');
         $imei = $request->input('input.imei');
         $operator_name = $request->input('input.operator_name');
@@ -81,9 +81,12 @@ class AuthenticateController extends Controller
                 'msg' => 'Invalid Credentials.'
             ], 400);
         }
+
         return response([
-            'status' => 'success',
-            'token' => $token
+            'status_code' => 1,
+            'success' => true,
+            'status_message' => 'success',
+            'request_token' => $token
         ]);
 
        
