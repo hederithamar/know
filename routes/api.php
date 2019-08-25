@@ -24,3 +24,34 @@ Route::group(['namespace' => 'Mobile', 'prefix' => 'mobile', 'as' => 'mobile.', 
     include_route_files(__DIR__.'/mobile/');
 });
 
+
+Route::group([
+    #'prefix'     => 'sistema',
+    'namespace'  => 'Backend',
+    #'middleware' => 'auth:api',
+], function () {
+    Route::group([
+        'prefix'     => 'moto',
+        'namespace'  => 'Motos',
+    ], function () {
+        
+        Route::get('getAll', 'MotoController@getAllMotos');
+        Route::get('getSearch', 'MotoController@getSearchMoto');
+        
+        Route::get('getAnio', 'MotoController@getAnio');
+        Route::get('getModelo', 'MotoController@getModelo');
+        Route::get('getSubmodelo', 'MotoController@getSubmodelo');
+        Route::get('getTipo', 'MotoController@getTipo');
+    });
+
+    Route::group([
+        'prefix'     => 'cita',
+        'namespace'  => 'CitaReparaciones',
+    ], function () {
+        
+        Route::get('getCita', 'CitaReparacionController@getCitaCliente');
+        Route::post('createCita', 'CitaReparacionController@create');
+
+    });
+});
+
