@@ -15,8 +15,8 @@ class CitaReparaciones extends Migration
     {
         Schema::create('cita_reparaciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('id_cliente')->nullable();
-            $table->int('id_centro')->nullable();
+            $table->integer('id_cliente')->nullable();
+            $table->integer('id_centro')->nullable();
             $table->date('fecha')->nullable();
             $table->float('hora')->nullable();
             $table->timestamps();

@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Backend\CitaReparacion;
 
-use App\Models\Motos\Moto;
+use App\Models\CitaReparacion\CitaReparacion;
 use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
@@ -18,7 +18,7 @@ class CitaReparacionRepository extends BaseRepository
      */
     public function model()
     {
-        return Moto::class;
+        return CitaReparacion::class;
     }
 
     /**
@@ -49,52 +49,25 @@ class CitaReparacionRepository extends BaseRepository
         return $this->model->get();
     }
 
-    public function getSearch($request)
+    public function getCita($request)
     {
-        $motos = $this->model;
+        $cita = $this->model;
 
-        if($request->anio != NULL){
-            $motos->where('anio',$request->anio);
-        }
-        if($request->modelo != NULL){
-            $motos->where('modelo',$request->modelo);
-        }
-        if($request->submodelo != NULL){
-            $motos->where('submodelo',$request->submodelo);
-        }
-        if($request->tipo != NULL){
-            $motos->where('tipo',$request->tipo);
-        }
-
-        return $motos->get();
+        $citas = $cita->select('fecha','hora', 'U.first_name')
+                    ->join('users AS U', 'U.id', '=', 'id_cliente')
+                    ->where('U.id',1)
+                    ->get();
+        
+        return $citas;
     }
 
-    public function getAnio()
+
+    public function create($request)
     {
-        $anio = $this->model->groupBy('anio')->pluck('anio','anio');
+        $cita = $this->model;
+        $cita->create($request);
 
-        return $anio;
-    }
-
-    public function getModelo()
-    {
-        $modelos = $this->model->groupBy('modelo')->pluck('modelo','modelo');
-
-        return $modelos;
-    }
-
-    public function getSubmodelo()
-    {
-        $submodelos = $this->model->groupBy('submodelo')->pluck('submodelo','submodelo');
-
-        return $submodelos;
-    }
-
-    public function getTipo()
-    {
-        $tipos = $this->model->groupBy('tipo')->pluck('tipo','tipo');
-
-        return $tipos;
+        return $cita;
     }
 
 }

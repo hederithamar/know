@@ -17,7 +17,7 @@ class CatCentroServicios extends Migration
             $table->increments('id');
             $table->string('nombre')->nullable();
             $table->string('direccion')->nullable();
-            $table->int('cp')->nullable();
+            $table->integer('cp')->nullable();
             $table->string('estado')->nullable();
             $table->timestamps();
         });

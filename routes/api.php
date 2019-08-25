@@ -36,4 +36,14 @@ Route::group([
         Route::get('getSubmodelo', 'MotoController@getSubmodelo');
         Route::get('getTipo', 'MotoController@getTipo');
     });
+
+    Route::group([
+        'prefix'     => 'cita',
+        'namespace'  => 'CitaReparaciones',
+    ], function () {
+        
+        Route::get('getCita', 'CitaReparacionController@getCitaCliente');
+        Route::post('createCita', 'CitaReparacionController@create');
+
+    });
 });
