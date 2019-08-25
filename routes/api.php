@@ -29,7 +29,11 @@ Route::group([
     ], function () {
         
         Route::get('getAll', 'MotoController@getAllMotos');
+        Route::get('getSearch', 'MotoController@getSearchMoto');
         
-
+        Route::get('getAnio', 'MotoController@getAnio');
+        Route::get('getModelo', 'MotoController@getModelo');
+        Route::get('getSubmodelo', 'MotoController@getSubmodelo');
+        Route::get('getTipo', 'MotoController@getTipo');
     });
 });

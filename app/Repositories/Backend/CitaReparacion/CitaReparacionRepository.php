@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Backend\Motos;
+namespace App\Repositories\Backend\CitaReparacion;
 
 use App\Models\Motos\Moto;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 /**
  * Class MotoRepository.
  */
-class MotoRepository extends BaseRepository
+class CitaReparacionRepository extends BaseRepository
 {
     /**
      * @return string
